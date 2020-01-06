@@ -47,6 +47,7 @@ public class PLAY : MonoBehaviour
         if (collision.tag == "魚")
         {
             Destroy(collision.gameObject);
+            NPC.count.PlayerGet();
             onEat.Invoke();
         }
     }

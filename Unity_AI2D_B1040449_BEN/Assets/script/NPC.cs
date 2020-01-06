@@ -23,6 +23,12 @@ public class NPC : MonoBehaviour
 
     public GameObject objCanvas;
     public Text textSay;
+    public static NPC count;
+
+    private void Start()
+    {
+        count = this;
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
