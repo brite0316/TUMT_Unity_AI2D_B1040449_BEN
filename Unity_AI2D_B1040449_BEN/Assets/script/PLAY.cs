@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
+using System.Collections;
 
 public class PLAY : MonoBehaviour
 {
@@ -15,12 +16,14 @@ public class PLAY : MonoBehaviour
     public Image hpBar;
     private float hpmax;
     public GameObject final;
+    public AudioClip soundProp;
+    private AudioSource aud;
 
     private void Start()
     {
         r2d = GetComponent<Rigidbody2D>();
         tra = GetComponent<Transform>();
-
+        aud = GetComponent<AudioSource>();
         hpmax = hp;
     }
 
@@ -49,6 +52,7 @@ public class PLAY : MonoBehaviour
             Destroy(collision.gameObject);
             NPC.count.PlayerGet();
             onEat.Invoke();
+            aud.PlayOneShot(soundProp, 0.6f);
         }
     }
 

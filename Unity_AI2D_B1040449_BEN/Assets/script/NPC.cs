@@ -24,10 +24,15 @@ public class NPC : MonoBehaviour
     public GameObject objCanvas;
     public Text textSay;
     public static NPC count;
+    public GameObject final;
+
+    public AudioClip soundText;
+    private AudioSource aud;
 
     private void Start()
     {
         count = this;
+        aud = GetComponent<AudioSource>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -48,7 +53,12 @@ public class NPC : MonoBehaviour
         objCanvas.SetActive(true);
         StopAllCoroutines();
 
-        if (countPlayer >= countFinish) _state = state.complete;
+        if (countPlayer >= countFinish)
+        {
+            _state = state.complete;
+
+            Invoke("End", 3f);
+        } 
 
 
         switch (_state)
@@ -72,7 +82,8 @@ public class NPC : MonoBehaviour
 
         for (int i = 0; i < say.Length; i++)            
         {
-            textSay.text += say[i].ToString();          
+            textSay.text += say[i].ToString();
+            aud.PlayOneShot(soundText, 0.6f);
             yield return new WaitForSeconds(speed);     
         }
     }
@@ -86,5 +97,10 @@ public class NPC : MonoBehaviour
     public void PlayerGet()
     {
         countPlayer++;
+    }
+
+    void End()
+    {
+        final.SetActive(true);
     }
 }

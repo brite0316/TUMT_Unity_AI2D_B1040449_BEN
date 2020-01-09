@@ -7,7 +7,7 @@ namespace ben
     {
         public void Replay()
         {
-            SceneManager.LoadScene("scene");
+            SceneManager.LoadScene("遊戲");
         }
 
         public void Quit()
