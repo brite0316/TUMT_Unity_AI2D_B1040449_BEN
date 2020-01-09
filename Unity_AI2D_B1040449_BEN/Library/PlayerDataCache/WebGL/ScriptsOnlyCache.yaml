@@ -15,6 +15,7 @@ ScriptsOnlyBuild:
     - UnityEditor.Tilemaps.TileDragAndDropManager
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
+    - UnityEditor.TestTools.TestRunner.TestListCacheData
     UnityEngine.UI.dll:
     - UnityEngine.EventSystems.EventSystem
     - UnityEngine.EventSystems.StandaloneInputModule
@@ -573,4 +574,4 @@ ScriptsOnlyBuild:
   platform: 20
   scenePathNames:
   - "Assets/Scenes/\u904A\u6232.unity"
-  playerPath: C:/Users/Zhuan Ti/Desktop/TUMT_Unity_AI2D_B1040449_BEN/wed
+  playerPath: C:/Users/Zhuan Ti/Desktop/TUMT_Unity_AI2D_B1040449_BEN/Web
